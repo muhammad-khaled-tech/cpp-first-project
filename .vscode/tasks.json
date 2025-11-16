@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "main.cpp",
+                "terminal.cpp",
+                "ui.cpp",
+                "input.cpp", 
+                "-o",
+                "my_program"
+            ],
+           
+        }
+    ]
+}
