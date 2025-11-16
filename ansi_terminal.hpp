@@ -5,6 +5,9 @@
 
 #ifdef _WIN32
 #include <windows.h>
+#ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
+#define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
+#endif
 #else
 #include <unistd.h>
 #endif
@@ -15,8 +18,8 @@ namespace Ansi
     constexpr const char *RESET = "\033[0m";
     constexpr const char *CLEAR_SCREEN = "\033[2J";
     constexpr const char *CURSOR_HOME = "\033[H";
-    constexpr const char* HIDE_CURSOR   = "\033[?25l"; 
-    constexpr const char* SHOW_CURSOR   = "\033[?25h"; 
+    constexpr const char *HIDE_CURSOR = "\033[?25l";
+    constexpr const char *SHOW_CURSOR = "\033[?25h";
 
     constexpr const char *BOLD = "\033[1m";
     constexpr const char *UNDERLINE = "\033[4m";

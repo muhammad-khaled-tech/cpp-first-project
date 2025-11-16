@@ -27,7 +27,8 @@ void enableRawMode()
     SetConsoleMode(hStdInput, rawMode);
 }
 
-void flushInputBuffer() {
+void flushInputBuffer()
+{
     FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
 }
 
@@ -57,9 +58,9 @@ void enableRawMode()
     tcsetattr(STDIN_FILENO, TCSANOW, &rawMode);
 }
 
-void flushInputBuffer() {
+void flushInputBuffer()
+{
     tcflush(STDIN_FILENO, TCIFLUSH);
 }
 
 #endif
-

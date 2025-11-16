@@ -26,7 +26,7 @@ int main()
         sleep_ms(50);
     }
     cout << move(12, 25) << FG_BRIGHT_GREEN << "Done! Starting App..." << RESET;
-    sleep(1);
+    sleep_ms(1000);
 
     // --- 3. MAIN MENU LOOP (LOGIC) --- //
     int selectedOption = 0;
@@ -69,7 +69,7 @@ int main()
             {
                 openScreen(selectedOption);
                 string msg = "(Press any key...)";
-                cout << move(15, 30) << FG_CYAN << msg<<flush;
+                cout << move(15, 30) << FG_CYAN << msg << flush;
 
                 while (true)
                 {
