@@ -96,6 +96,7 @@ int main()
             break;
         }
     }
-
+    std::cout << CLEAR_SCREEN << HIDE_CURSOR << std::flush;
+    disableRawMode();
     return 0;
 }
