@@ -59,7 +59,6 @@ KeyType readKey()
 
 KeyType readKey()
 {
-    // (كود اللينكس سليم زي ما هو)
     int nread;
     char c;
     nread = read(STDIN_FILENO, &c, 1);
