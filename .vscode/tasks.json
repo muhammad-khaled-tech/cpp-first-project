@@ -2,7 +2,8 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Project",
+          
+            "label": "Build Project (Linux)",
             "type": "shell",
             "command": "g++",
             "args": [
@@ -11,11 +12,31 @@
                 "main.cpp",
                 "terminal.cpp",
                 "ui.cpp",
-                "input.cpp", 
+                "input.cpp",
                 "-o",
-                "my_program"
+                "my_program" 
             ],
-           
+            "group": {
+                "kind": "build",
+                "isDefault": true 
+            }
+        },
+        {
+          
+            "label": "Build Project (Windows)",
+            "type": "shell",
+            "command": "x86_64-w64-mingw32-g++", 
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "main.cpp",
+                "terminal.cpp",
+                "ui.cpp",
+                "input.cpp",
+                "-o",
+                "my_program.exe" 
+            ],
+            "group": "build" 
         }
     ]
 }
