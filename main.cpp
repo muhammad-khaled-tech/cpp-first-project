@@ -63,28 +63,16 @@ int main()
             if (selectedOption == totalOptions - 1)
             {
                 isRunning = false;
-                break;
             }
             else
             {
                 openScreen(selectedOption);
                 string msg = "(Press any key...)";
                 cout << move(15, 30) << FG_CYAN << msg << flush;
-
-                while (true)
-                {
-
-                    KeyType key = readKey();
-
-                    if (key != KEY_UNKNOWN)
-                    {
-                        break;
-                    }
-                }
-
-                break;
+                while (readKey() == KEY_UNKNOWN);
             }
         }
+        break;
         case KEY_ESCAPE:
             isRunning = false;
             break;
