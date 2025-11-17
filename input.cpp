@@ -59,8 +59,8 @@ KeyType readKey()
 
 KeyType readKey()
 {
-    int nread;
-    char c;
+    int nread=0;
+    char c= '\0';
     nread = read(STDIN_FILENO, &c, 1);
 
     if (nread <= 0)
@@ -70,7 +70,7 @@ KeyType readKey()
 
     if (c == '\033')
     {
-        char seq[3];
+        char seq[2] = {0};
         if (read(STDIN_FILENO, &seq[0], 1) == 0)
             return KEY_ESCAPE;
         if (read(STDIN_FILENO, &seq[1], 1) == 0)
