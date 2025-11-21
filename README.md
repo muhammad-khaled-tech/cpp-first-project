@@ -193,4 +193,4 @@ This is *why* the `input` layer is so crucial. The "languages" are completely di
   * **Problem:** When a user presses `Enter` to open a screen, their key-press might be "repeated" by the OS (Key Repeat) or (on Windows) send two characters (`\r\n`). This "leftover" character in the buffer is immediately read by our "wait" loop, causing the screen to close instantly.
   * **Solution (in `main.cpp`):**
     1.  **`flushInputBuffer();`**: After detecting `KEY_ENTER`, we first call this "pump" function. It uses `tcflush` (Linux) or `FlushConsoleInputBuffer` (Windows) to clear all "leftover" characters from the input buffer.
-    2.  **`while(readKey() == KEY_UNKNOWN);`**: This is the "brake." Now that the buffer is clean, this loop will safely run (checking every 0.1s) until a *genuinely new* key is pressed by the user.
+    2.  **`while(readKey() == KEY_UNKNOWN);`**: This is the "brake." Now that the buffer is clean, this loop will safely run (checking every 0.1s) until a *genuinely new* key is pressed by the user.# employee-system
